@@ -16,38 +16,22 @@ tap "oven-sh/bun"
 tap "sass/sass"
 tap "tinted-theming/tinted"
 tap "wader/tap"
-# Portable ASCII art graphics library
-brew "aalib"
-# GNU internationalization (i18n) and localization (l10n) library
 # Simple, modern, secure file encryption
 brew "age"
 # Library and utilities for processing GIFs
-brew "giflib"
 # List ASCII idiomatic names and octal/decimal code-point forms
 brew "ascii"
 # General purpose syntax highlighter in pure Go
 brew "chroma"
-# Cross-platform make
-# Console Matrix
-brew "cmatrix"
-# Powerful, clean, object-oriented scripting language
 # Dependency manager for Cocoa projects
 brew "cocoapods"
 # GNU File, Shell, and Text utilities
-# Top-like interface for container metrics
-# Tool for exploring each layer in a docker image
-# Convert text between DOS, UNIX, and Mac formats
-brew "dos2unix"
-# IMAP/POP3 server
-brew "dovecot"
 # Utilities for the ext2, ext3, and ext4 file systems
 brew "e2fsprogs"
 # Build automation tool for the container era
-brew "earthly"
 # Modern, maintained replacement for ls
 # CLI for FastAPI framework
 brew "fastapi"
-# Fast web fuzzer written in Go
 # I/O benchmark and stress test
 brew "fio"
 # Open-source GitLab command-line tool
@@ -58,11 +42,8 @@ brew "six"
 brew "gnu-sed"
 # Open source programming language to build simple/reliable/efficient software
 # Task is a task runner/build tool that aims to be simpler and easier to use
-brew "go-task"
 # Package compiler and linker metadata toolkit
-brew "pkgconf"
 # Fast linters runner for Go
-brew "golangci-lint"
 # Ping, but with a graph
 # Next generation open source RPC library and framework
 brew "grpc"
@@ -80,8 +61,6 @@ brew "imap-uw"
 # Interactive computing in Python
 # Image manipulation library
 brew "jpeg"
-# Implements SNMP v1, v2c, and v3, using IPv4 and IPv6
-brew "net-snmp"
 # Fast and accurate code counter with complexity and COCOMO estimates
 brew "scc"
 # SOcket CAT: netcat on steroids
@@ -91,8 +70,6 @@ brew "spdlog"
 # Command-line interface for https://speedtest.net bandwidth tests
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
-# Command-line tool for sharing terminal over the web
-brew "ttyd"
 
 # Change the theme of your terminal, text editor and anything else with one command.
 brew "tinted-theming/tinted/tinty"
@@ -103,6 +80,7 @@ brew "tinted-theming/tinted/tinty"
 brew "usbutils"
 brew "pstree"
 brew "htop"
+brew "bottom"
 brew "glances"
 brew "bpytop"
 brew "neofetch"
@@ -112,6 +90,9 @@ brew "ncdu"
 brew "eza"
 brew "dua-cli"
 brew "duf"
+brew "dust"
+
+brew "asdf"
 
 
 # Git tools
@@ -127,6 +108,7 @@ brew "neovim"
 # Formatting tools
 brew "wader/tap/fq"
 brew "jq"
+brew "yq"
 
 
 # Build tools
@@ -134,6 +116,7 @@ brew "autoconf"
 brew "automake"
 brew "binutils"
 brew "cmake"
+brew "pkgconf"
 brew "coreutils"
 brew "gettext"
 brew "texinfo"
@@ -146,15 +129,18 @@ brew "libicns"
 brew "libtool"
 brew "libvirt"
 brew "libwebsockets"
+brew "giflib"
 
 
 # Languages
 brew "zig"
-brew "go"
 brew "ruby"
 brew "ocaml"
 brew "nasm"
+brew "go"
+brew "golangci-lint"
 
+brew "go-task"
 
 # Shells
 brew "zsh"
@@ -192,12 +178,17 @@ brew "nmap"
 brew "mtr"
 brew "gping"
 brew "bmon"
+brew "wrk"
 
 
 # Hack tools
 brew "hydra"
 brew "gobuster"
 brew "ffuf"
+brew "sqlmap"
+brew "john"
+brew "nikto"
+brew "nuclei"
 
 
 # Database tools
@@ -211,8 +202,11 @@ brew "virt-manager"
 
 
 # Containers
+brew "docker"
+brew "docker-compose"
 brew "ctop"
 brew "dive"
+brew "earthly"
 
 
 # k8s tools
