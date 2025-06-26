@@ -1,0 +1,234 @@
+tap "arthurk/virt-manager"
+tap "dart-lang/dart"
+tap "derailed/k9s"
+tap "fluxcd/tap"
+tap "go-task/tap"
+tap "guitmz/tools"
+tap "hawkw/x86_64-pc-elf"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "homebrew/test-bot"
+tap "kdash-rs/kdash"
+tap "knazarov/qemu-virgl"
+tap "nativeos/i386-elf-toolchain"
+tap "oven-sh/bun"
+tap "sass/sass"
+tap "tinted-theming/tinted"
+tap "wader/tap"
+# Portable ASCII art graphics library
+brew "aalib"
+# GNU internationalization (i18n) and localization (l10n) library
+# Simple, modern, secure file encryption
+brew "age"
+# Library and utilities for processing GIFs
+brew "giflib"
+# List ASCII idiomatic names and octal/decimal code-point forms
+brew "ascii"
+# General purpose syntax highlighter in pure Go
+brew "chroma"
+# Cross-platform make
+# Console Matrix
+brew "cmatrix"
+# Powerful, clean, object-oriented scripting language
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# GNU File, Shell, and Text utilities
+# Top-like interface for container metrics
+# Tool for exploring each layer in a docker image
+# Convert text between DOS, UNIX, and Mac formats
+brew "dos2unix"
+# IMAP/POP3 server
+brew "dovecot"
+# Utilities for the ext2, ext3, and ext4 file systems
+brew "e2fsprogs"
+# Build automation tool for the container era
+brew "earthly"
+# Modern, maintained replacement for ls
+# CLI for FastAPI framework
+brew "fastapi"
+# Fast web fuzzer written in Go
+# I/O benchmark and stress test
+brew "fio"
+# Open-source GitLab command-line tool
+brew "glab"
+# Python 2 and 3 compatibility utilities
+brew "six"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# Open source programming language to build simple/reliable/efficient software
+# Task is a task runner/build tool that aims to be simpler and easier to use
+brew "go-task"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Fast linters runner for Go
+brew "golangci-lint"
+# Ping, but with a graph
+# Next generation open source RPC library and framework
+brew "grpc"
+# Like cURL, but for gRPC
+brew "grpcurl"
+
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@74"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@75"
+# Display an interface's bandwidth usage
+brew "iftop"
+# University of Washington IMAP toolkit
+brew "imap-uw"
+# Interactive computing in Python
+# Image manipulation library
+brew "jpeg"
+# Implements SNMP v1, v2c, and v3, using IPv4 and IPv6
+brew "net-snmp"
+# Fast and accurate code counter with complexity and COCOMO estimates
+brew "scc"
+# SOcket CAT: netcat on steroids
+brew "socat"
+# Super fast C++ logging library
+brew "spdlog"
+# Command-line interface for https://speedtest.net bandwidth tests
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Command-line tool for sharing terminal over the web
+brew "ttyd"
+
+# Change the theme of your terminal, text editor and anything else with one command.
+brew "tinted-theming/tinted/tinty"
+
+
+
+# System utilities
+brew "usbutils"
+brew "pstree"
+brew "htop"
+brew "glances"
+brew "bpytop"
+brew "neofetch"
+brew "bat"
+brew "hexyl"
+brew "ncdu"
+brew "eza"
+brew "dua-cli"
+brew "duf"
+
+
+# Git tools
+brew "git"
+brew "git-delta"
+
+
+# Editors
+brew "vim"
+brew "neovim"
+
+
+# Formatting tools
+brew "wader/tap/fq"
+brew "jq"
+
+
+# Build tools
+brew "autoconf"
+brew "automake"
+brew "binutils"
+brew "cmake"
+brew "coreutils"
+brew "gettext"
+brew "texinfo"
+brew "mtools"
+
+
+# Libraries
+brew "libelf"
+brew "libicns"
+brew "libtool"
+brew "libvirt"
+brew "libwebsockets"
+
+
+# Languages
+brew "zig"
+brew "go"
+brew "ruby"
+brew "ocaml"
+brew "nasm"
+
+
+# Shells
+brew "zsh"
+
+
+# Compression and file packaging/archive utility
+brew "zip"
+brew "sevenzip"
+
+
+# Node.js tools
+brew "node"
+brew "oven-sh/bun/bun"
+brew "nvm"
+
+brew "yarn"
+brew "pnpm"
+
+brew "sass/sass/sass"
+
+
+# Python tools
+brew "ipython"
+brew "pipx"
+brew "pyenv"
+
+
+# Networking tools
+brew "wget"
+brew "telnet"
+brew "tcptraceroute"
+brew "speedtest-cli"
+brew "openssh"
+brew "nmap"
+brew "mtr"
+brew "gping"
+brew "bmon"
+
+
+# Hack tools
+brew "hydra"
+brew "gobuster"
+brew "ffuf"
+
+
+# Database tools
+brew "pgcli"
+brew "mysql"
+
+
+# Virtualization and emulation
+brew "qemu"
+brew "virt-manager"
+
+
+# Containers
+brew "ctop"
+brew "dive"
+
+
+# k8s tools
+brew "derailed/k9s/k9s"
+brew "argocd"
+brew "helm"
+brew "fluxcd/tap/flux"
+brew "kind"
+brew "kubernetes-cli"
+brew "kubectx"
+brew "kustomize"
+
+
+# Clouds
+brew "oci-cli"
+
+
+# Wobcom
+brew "openfortivpn"

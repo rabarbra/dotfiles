@@ -1,0 +1,7 @@
+[url "ssh://git@git.wobcom.de"]
+	insteadOf = https://git.wobcom.de
+[url "ssh://git@git.wobcom.de/"]
+	insteadOf = https://git.wobcom.de/
+[user]
+	name = Polina Simonenko
+	email = polina.simonenko@wobcom.de

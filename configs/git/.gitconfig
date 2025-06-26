@@ -1,0 +1,30 @@
+[core]
+    pager = delta
+    editor = vim
+
+[push]
+    default = current
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    syntax-theme = Nord
+    true-color = always
+    side-by-side = true
+    navigate = true    # use n and N to move between diff sections
+
+[merge]
+    conflictstyle = zdiff3
+
+[includeIf "hasconfig:remote.*.url:**wobcom.de*/**"]
+    path = ~/.gitconfig-wobcom
+
+[includeIf "hasconfig:remote.*.url:http*//**wobcom.de*/**"]
+    path = ~/.gitconfig-wobcom
+
+[includeIf "hasconfig:remote.*.url:**gitlab.space.net*/**"]
+    path = ~/.gitconfig-wobcom
+
+[includeIf "hasconfig:remote.*.url:**github.com*/**"]
+    path = ~/.gitconfig-github
