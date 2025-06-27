@@ -96,7 +96,7 @@ else
         echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fi
-    if ! command -v brew &>/dev/null; then
+    if ! command -v brew; then
         printf "${RED}Homebrew installation failed.${NC}\n"
         exit 1
     fi
