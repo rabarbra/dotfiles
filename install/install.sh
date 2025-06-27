@@ -92,7 +92,8 @@ else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     if [ $OS = "linux" ]; then
         printf "${YELLOW}Adding Homebrew to PATH.${NC}\n"
-        echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /root/.bashrc
+        echo >> $HOME/.bashrc
+        echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bashrc
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fi
     if ! command -v brew &>/dev/null; then
