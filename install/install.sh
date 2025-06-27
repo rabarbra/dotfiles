@@ -43,7 +43,7 @@ case "$(uname -s)" in
     elif [ -f /etc/redhat-release ]; then
       DISTRO=$(cat /etc/redhat-release)
       if command -v dnf >/dev/null 2>&1; then
-        dnf group install development-tools
+        dnf group install -y development-tools
         INSTALL="dnf install -y"
       else
         INSTALL="yum install -y"
