@@ -38,7 +38,7 @@ case "$(uname -s)" in
       INSTALL="apk add"
     elif [ -f /etc/debian_version ]; then
       DISTRO=$(awk -F= '/^NAME/ {gsub(/"/, "", $2); print $2}' /etc/os-release)
-      apt update -y && apt install -y build-essential
+      apt update -y && apt install -y build-essential procps
       INSTALL="apt install -y"
     elif [ -f /etc/redhat-release ]; then
       DISTRO=$(cat /etc/redhat-release)
@@ -93,9 +93,10 @@ else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     if [ $OS = "linux" ]; then
         printf "${YELLOW}Adding Homebrew to PATH.${NC}\n"
+        BREW_HOME="/home/linuxbrew/.linuxbrew"
         echo >> $HOME/.bashrc
         echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bashrc
-        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        eval "$($BREW_HOME/bin/brew shellenv)"
     fi
     if ! command -v brew; then
         printf "${RED}Homebrew installation failed.${NC}\n"
@@ -139,3 +140,10 @@ else
     printf "${YELLOW}Oh My Zsh is already installed.${NC}\n"
 fi
 
+# Symlink dotfiles
+printf "${BLUE}Symlinking dotfiles...${NC}\n"
+
+
+if [ $OS = "linux" ]; then
+  printf "${BLUE}eval \"\$($BREW_HOME/bin/brew shellenv)\"${NC}\n"
+fi
