@@ -35,11 +35,11 @@ case "$(uname -s)" in
     OS="linux"
     if [ -f /etc/alpine-release ]; then
       DISTRO="Alpine"
-      INSTALL="apk add"
+      INSTALL="apk add -y"
     elif [ -f /etc/debian_version ]; then
       DISTRO=$(awk -F= '/^NAME/ {gsub(/"/, "", $2); print $2}' /etc/os-release)
-      apt update -y && apt install -y build-essential procps
       INSTALL="apt install -y"
+      apt update -y && $INSTALL build-essential procps
     elif [ -f /etc/redhat-release ]; then
       DISTRO=$(cat /etc/redhat-release)
       if command -v dnf >/dev/null 2>&1; then
@@ -51,6 +51,7 @@ case "$(uname -s)" in
     elif [ -f /etc/arch-release ]; then
       DISTRO="Arch"
       INSTALL="pacman -Sy --noconfirm"
+      $INSTALL base-devel
     else
       DISTRO="Unknown Linux"
     fi
@@ -145,5 +146,5 @@ printf "${BLUE}Symlinking dotfiles...${NC}\n"
 
 
 if [ $OS = "linux" ]; then
-  printf "${BLUE}eval \"\$($BREW_HOME/bin/brew shellenv)\"${NC}\n"
+  printf "${BLUE}eval \"\$(${BREW_HOME}/bin/brew shellenv)\"${NC}\n"
 fi
