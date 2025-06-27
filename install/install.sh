@@ -85,6 +85,7 @@ if [ ! -d "$DOTFILES_DIR" ]; then
     printf "${GREEN}Dotfiles repository cloned successfully to ${DOTFILES_DIR}.${NC}\n"
 else
     printf "${YELLOW}Dotfiles repository already exists at ${DOTFILES_DIR}.${NC}\n"
+    cd $DOTFILES_REPO && git pull || true
 fi
 
 # Install homebrew if not installed
@@ -152,8 +153,11 @@ else
 fi
 
 # Symlink dotfiles
-printf "${BLUE}Symlinking dotfiles...${NC}\n"
-
+printf "${GREEN}Symlinking dotfiles...${NC}\n"
+cd $DOTFILES_DIR/configs || exit 1
+stow --no-folding --restow --verbose=1 zsh || true
+stow --no-folding --restow --verbose=1 git || true
+stow --no-folding --restow --verbose=1 bash || true
 
 if [ $OS = "linux" ]; then
   printf "${BLUE}eval \"\$(${BREW_HOME}/bin/brew shellenv)\"${NC}\n"
