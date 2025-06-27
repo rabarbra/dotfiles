@@ -90,6 +90,11 @@ else
   if [ -z "$BREW_HOME" ]; then
     printf "${YELLOW}Installing Homebrew.${NC}\n"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    if [ $OS = "linux" ]; then
+        printf "${YELLOW}Adding Homebrew to PATH.${NC}\n"
+        echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /root/.bashrc
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    fi
     if ! command -v brew &>/dev/null; then
         printf "${RED}Homebrew installation failed.${NC}\n"
         exit 1
