@@ -1,311 +1,69 @@
-tap "arthurk/virt-manager"
-tap "dart-lang/dart"
-tap "derailed/k9s"
-tap "fluxcd/tap"
-tap "go-task/tap"
-tap "guitmz/tools"
-tap "hawkw/x86_64-pc-elf"
 tap "homebrew/cask"
 tap "homebrew/core"
-tap "homebrew/services"
-tap "homebrew/test-bot"
-tap "kdash-rs/kdash"
-tap "knazarov/qemu-virgl"
-tap "nativeos/i386-elf-toolchain"
-tap "oven-sh/bun"
-tap "sass/sass"
-tap "tinted-theming/tinted"
-tap "wader/tap"
-# Portable ASCII art graphics library
-brew "aalib"
-# GNU internationalization (i18n) and localization (l10n) library
-brew "gettext"
-# Simple, modern, secure file encryption
-brew "age"
-# Library and utilities for processing GIFs
-brew "giflib"
-# GitOps Continuous Delivery for Kubernetes
-brew "argocd"
-# List ASCII idiomatic names and octal/decimal code-point forms
-brew "ascii"
-# Automatic configure script builder
-brew "autoconf"
-# Tool for generating GNU Standards-compliant Makefiles
-brew "automake"
-# Clone of cat(1) with syntax highlighting and Git integration
-brew "bat"
-# GNU binary tools for native development
-brew "binutils"
-# Interface bandwidth monitor
-brew "bmon"
-# Linux/OSX/FreeBSD resource monitor
-brew "bpytop"
-# General purpose syntax highlighter in pure Go
-brew "chroma"
-# Cross-platform make
-brew "cmake"
-# Console Matrix
-brew "cmatrix"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
-# Dependency manager for Cocoa projects
-brew "cocoapods"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
-# Top-like interface for container metrics
-brew "ctop"
-# Tool for exploring each layer in a docker image
-brew "dive"
-# Convert text between DOS, UNIX, and Mac formats
-brew "dos2unix"
-# IMAP/POP3 server
-brew "dovecot"
-# View disk space usage and delete unwanted data, fast
-brew "dua-cli"
-# Disk Usage/Free Utility - a better 'df' alternative
-brew "duf"
-# Utilities for the ext2, ext3, and ext4 file systems
-brew "e2fsprogs"
-# Build automation tool for the container era
-brew "earthly"
-# Modern, maintained replacement for ls
-brew "eza"
-# CLI for FastAPI framework
-brew "fastapi"
-# Fast web fuzzer written in Go
-brew "ffuf"
-# I/O benchmark and stress test
-brew "fio"
-# Distributed revision control system
-brew "git"
-# Syntax-highlighting pager for git and diff output
-brew "git-delta"
-# Open-source GitLab command-line tool
-brew "glab"
-# Python 2 and 3 compatibility utilities
-brew "six"
-# Alternative to top/htop
-brew "glances"
-# Multi-platform library for OpenGL applications
-brew "glfw"
-# C++ mathematics library for graphics software
-brew "glm"
-# GNU implementation of the famous stream editor
-brew "gnu-sed"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
-# Task is a task runner/build tool that aims to be simpler and easier to use
-brew "go-task"
-# Package compiler and linker metadata toolkit
-brew "pkgconf"
-# Directory/file & DNS busting tool written in Go
-brew "gobuster"
-# Fast linters runner for Go
-brew "golangci-lint"
-# Ping, but with a graph
-brew "gping"
-# Next generation open source RPC library and framework
-brew "grpc"
-# Like cURL, but for gRPC
-brew "grpcurl"
-# Post-modern modal text editor
-brew "helix"
-# Kubernetes package manager
-brew "helm"
-# Command-line hex viewer
-brew "hexyl"
-# Improved top (interactive process viewer)
-brew "htop"
-# Network logon cracker which supports many services
-brew "hydra"
-# GNU GRUB bootloader for i686-elf
-brew "i686-elf-grub"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@74"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@75"
-# Display an interface's bandwidth usage
-brew "iftop"
-# University of Washington IMAP toolkit
-brew "imap-uw"
-# Interactive computing in Python
-brew "ipython"
-# Image manipulation library
-brew "jpeg"
-# Lightweight and flexible command-line JSON processor
-brew "jq"
-# Run local Kubernetes cluster in Docker
-brew "kind"
-# Kubernetes command-line interface
-brew "kubernetes-cli"
-# Tool that can switch between kubectl contexts easily and create aliases
-brew "kubectx"
-# Template-free customization of Kubernetes YAML manifests
-brew "kustomize"
-# Lazier way to manage everything docker
-brew "lazydocker"
-# Simple terminal UI for git commands
-brew "lazygit"
-# Sophisticated file transfer program
-brew "lftp"
-# ELF object file access library
-brew "libelf"
-# Library for manipulation of the macOS .icns resource format
-brew "libicns"
-# Generic library support script
-brew "libtool"
-# C virtualization API
-brew "libvirt"
-# C websockets server library
-brew "libwebsockets"
-# SMTP client that can be used as an SMTP plugin for Mutt
-brew "msmtp"
-# Tools for manipulating MSDOS files
-brew "mtools"
-# 'traceroute' and 'ping' in a single tool
-brew "mtr"
-# Open source relational database management system
-brew "mysql"
-# Netwide Assembler (NASM) is an 80x86 assembler
-brew "nasm"
-# NCurses Disk Usage
-brew "ncdu"
-# Fast, highly customisable system info script
-brew "neofetch"
-# Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
-# Implements SNMP v1, v2c, and v3, using IPv4 and IPv6
-brew "net-snmp"
-# Realtime console network usage monitor
-brew "nload"
-# Port scanning utility for large networks
-brew "nmap"
-# Platform built on V8 to build network applications
-brew "node"
-# Manage multiple Node.js versions
-brew "nvm"
-# General purpose programming language in the ML family
-brew "ocaml"
-# Oracle Cloud Infrastructure CLI
-brew "oci-cli"
-# Open Fortinet client for PPP+TLS VPN tunnel services
-brew "openfortivpn"
-# OpenBSD freely-licensed SSH connectivity tools
-brew "openssh"
-# Libosmium-based command-line tool for processing OpenStreetMap data
-brew "osmium-tool"
-# CLI for Postgres with auto-completion and syntax highlighting
-brew "pgcli"
-# Execute binaries from Python packages in isolated environments
-brew "pipx"
-# Fast, disk space efficient package manager
-brew "pnpm", link: false
-# Show ps output as a tree
-brew "pstree"
-# Python version management
-brew "pyenv"
-# Python interface to Tcl/Tk
-brew "python-tk@3.13"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
-# Generic machine emulator and virtualizer
-brew "qemu"
-# Powerful, clean, object-oriented scripting language
-brew "ruby@3.3", link: true
-# Fast and accurate code counter with complexity and COCOMO estimates
-brew "scc"
-# 7-Zip is a file archiver with a high compression ratio
-brew "sevenzip"
-# SOcket CAT: netcat on steroids
-brew "socat"
-# Super fast C++ logging library
-brew "spdlog"
-# Command-line interface for https://speedtest.net bandwidth tests
-brew "speedtest-cli"
-# Organize software neatly under a single directory tree (e.g. /usr/local)
-brew "stow"
-# Traceroute implementation using TCP packets
-brew "tcptraceroute"
-# User interface to the TELNET protocol
+
 brew "telnet"
-# Official documentation format of the GNU project
-brew "texinfo"
-# Command-line tool for sharing terminal over the web
-brew "ttyd"
-# List detailed info about USB devices
-brew "usbutils"
-# ASGI web server
-brew "uvicorn"
-# Vi 'workalike' with many additional features
-brew "vim"
-# App for managing virtual machines
-brew "virt-manager"
-# Secure FTP server for UNIX
-brew "vsftpd"
-# Internet file retriever
-brew "wget"
-# GNU Binutils for x86_64-elf cross development
-brew "x86_64-elf-binutils"
-# GNU compiler collection for x86_64-elf
-brew "x86_64-elf-gcc"
-# GNU debugger for x86_64-elf cross development
-brew "x86_64-elf-gdb"
-# GNU GRUB bootloader for x86_64-elf
-brew "x86_64-elf-grub"
-# JavaScript package manager
-brew "yarn"
-# Programming language designed for robustness, optimality, and clarity
-brew "zig"
-# Compression and file packaging/archive utility
-brew "zip"
-# UNIX shell (command interpreter)
-brew "zsh"
-# Kubernetes CLI To Manage Your Clusters In Style!
-brew "derailed/k9s/k9s"
-# Flux CLI
-brew "fluxcd/tap/flux"
-# A fast and simple dashboard for Kubernetes written in Rust
-brew "kdash-rs/kdash/kdash"
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
-# Stylesheet Preprocessor
-brew "sass/sass/sass"
-# Change the theme of your terminal, text editor and anything else with one command.
-brew "tinted-theming/tinted/tinty"
-# jq for binary formats
-brew "wader/tap/fq"
-# Android SDK component
-cask "android-platform-tools"
-# API development platform
+
 cask "apidog"
-# Free and open-source web browser
+cask "binary-ninja-free"
 cask "chromium"
-# App to build and share containerised applications and microservices
 cask "docker-desktop"
-# Web browser
 cask "firefox"
-# Screenshot software
 cask "flameshot"
 cask "font-fira-code"
-# Disk partitioning tool
-cask "gdisk"
-# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# HTTP and GraphQL Client
-cask "insomnia"
-# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# File system integration
-cask "macfuse"
-# Collaboration platform for API development
-cask "postman"
-# Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
-# JDK from the Eclipse Foundation (Adoptium)
-cask "temurin@17"
-# Virtual machines UI using QEMU
-cask "utm"
-# Open-source version of the X.Org X Window System
-cask "xquartz"
-# Multiplayer code editor
-cask "zed"
+cask "slack"
+cask "yaak"
+cask "visual-studio-code"
+
+vscode "42crunch.vscode-openapi"
+vscode "a-h.templ"
+vscode "amodio.tsl-problem-matcher"
+vscode "basdp.language-gas-x86"
+vscode "bierner.markdown-mermaid"
+vscode "bierner.markdown-preview-github-styles"
+vscode "bpruitt-goddard.mermaid-markdown-syntax-highlighting"
+vscode "bradlc.vscode-tailwindcss"
+vscode "bwork.zig-tools"
+vscode "ctcuff.font-preview"
+vscode "dancheg97.grpc-clicker"
+vscode "dbaeumer.vscode-eslint"
+vscode "docker.docker"
+vscode "eamodio.gitlens"
+vscode "earthly.earthfile-syntax-highlighting"
+vscode "esbenp.prettier-vscode"
+vscode "firsttris.vscode-jest-runner"
+vscode "formulahendry.vscode-mysql"
+vscode "golang.go"
+vscode "hediet.vscode-drawio"
+vscode "jock.svg"
+vscode "kingwl.vscode-vitest-runner"
+vscode "lucianirsigler.nasm"
+vscode "marlosirapuan.nord-deep"
+vscode "matt-meyers.vscode-dbml"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode.extension-test-runner"
+vscode "ms-vscode.remote-explorer"
+vscode "nrwl.angular-console"
+vscode "ocamllabs.ocaml-platform"
+vscode "oven.bun-vscode"
+vscode "pomdtr.excalidraw-editor"
+vscode "prime31.zig"
+vscode "prisma.prisma"
+vscode "redhat.vscode-yaml"
+vscode "simonsiefke.svg-preview"
+vscode "task.vscode-task"
+vscode "tintedtheming.base16-tinted-themes"
+vscode "tomoyukim.vscode-mermaid-editor"
+vscode "vitest.explorer"
+vscode "vstirbu.vscode-mermaid-preview"
+vscode "wakatime.vscode-wakatime"
+vscode "yzhang.markdown-all-in-one"
+vscode "ziglang.vscode-zig"

@@ -9,14 +9,11 @@ WHITE='\033[0;37m'
 BOLD='\033[1m'
 NC='\033[0m'
 
-xcode-select --install
-
 # Clone the dotfiles repository if it doesn't exist
-DOTFILES_REPO=https://github.com/rabarbra/dotfiles
-DOTFILES_DIR="$HOME/.dotfiles"
-# DOTFILES_DIR="."
+# DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_DIR="."
 if [ ! -d "$DOTFILES_DIR" ]; then
-    git clone https://github.com/rabarbra/dotfiles "$DOTFILES_DIR"
+    git clone git@github.com:rabarbra/dotfiles.git "$DOTFILES_DIR"
     if [ $? -ne 0 ]; then
         printf "${RED}Failed to clone the dotfiles repository.${NC}\n"
         exit 1
