@@ -16,8 +16,7 @@ OS="unknown"
 DISTRO="unknown"
 INSTALL=""
 
-# DOTFILES_DIR="$HOME/.dotfiles"
-DOTFILES_DIR="."
+DOTFILES_DIR="$HOME/.dotfiles"
 DOTFILES_REPO="https://github.com/rabarbra/dotfiles"
 
 BREW_HOME=""
@@ -105,7 +104,7 @@ else
   printf "${GREEN}Homebrew installed successfully.${NC}\n"
 fi
 
-# Install packages from Brewfile
+# Install common packages from Brewfile
 if [ -f "${DOTFILES_DIR}/os/common/Brewfile" ]; then
   brew bundle --file=${DOTFILES_DIR}/os/common/Brewfile
   if [ $? -ne 0 ]; then
@@ -116,3 +115,28 @@ if [ -f "${DOTFILES_DIR}/os/common/Brewfile" ]; then
 else
   printf "${YELLOW}Common Brewfile not found, skipping common package installation.${NC}\n"
 fi
+
+# Install MacOS packages from Brewfile
+if [ $OS = "macos" ] && [ -f "${DOTFILES_DIR}/os/macos/Brewfile" ]; then
+  brew bundle --file=${DOTFILES_DIR}/os/macos/Brewfile
+  if [ $? -ne 0 ]; then
+      printf "${RED}Failed to install MacOs packages from Brewfile.${NC}\n"
+      exit 1
+  fi
+  printf "${GREEN}MacOs packages installed successfully from Brewfile.${NC}\n"
+else
+  printf "${YELLOW}MacOs Brewfile not found, skipping MacOs package installation.${NC}\n"
+fi
+
+# Install Oh My Zsh
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    if [ $? -ne 0 ]; then
+        printf "${RED}Oh My Zsh installation failed.${NC}\n"
+        exit 1
+    fi
+    printf "${GREEN}Oh My Zsh installed successfully.${NC}\n"
+else
+    printf "${YELLOW}Oh My Zsh is already installed.${NC}\n"
+fi
+
