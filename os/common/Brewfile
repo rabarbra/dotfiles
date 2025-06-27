@@ -1,9 +1,7 @@
 tap "derailed/k9s"
 tap "fluxcd/tap"
-tap "go-task/tap"
 tap "guitmz/tools"
 tap "oven-sh/bun"
-tap "sass/sass"
 tap "tinted-theming/tinted"
 
 brew "gcc"
@@ -39,7 +37,6 @@ brew "tinted-theming/tinted/tinty"
 brew "stow"
 
 brew "asdf"
-brew "age"
 
 
 # Git tools
@@ -54,7 +51,6 @@ brew "neovim"
 
 # Formatting tools
 brew "jq"
-brew "yq"
 
 
 # Build tools
@@ -77,8 +73,6 @@ brew "nasm"
 brew "go"
 brew "golangci-lint"
 
-brew "go-task"
-
 
 # Shells
 brew "zsh"
@@ -94,8 +88,6 @@ brew "node"
 brew "oven-sh/bun/bun"
 brew "nvm"
 
-brew "sass/sass/sass"
-
 
 # Python tools
 brew "ipython"
@@ -103,14 +95,9 @@ brew "pipx"
 brew "pyenv"
 
 
-# Observability tools
-brew "grpcurl"
-
-
 # Benchmarking & stats tools
 brew "speedtest-cli"
 brew "wrk"
-brew "scc"
 
 
 # Testing tools
@@ -132,8 +119,6 @@ brew "iftop"
 
 # Hack tools
 brew "hydra"
-brew "gobuster"
-brew "ffuf"
 brew "sqlmap"
 brew "john"
 brew "nikto"
@@ -150,10 +135,7 @@ brew "qemu"
 
 
 # Containers
-brew "docker"
-brew "docker-compose"
 brew "ctop"
-brew "dive"
 brew "earthly"
 
 
@@ -162,7 +144,6 @@ brew "derailed/k9s/k9s"
 brew "argocd"
 brew "helm"
 brew "fluxcd/tap/flux"
-brew "kind"
 brew "kubernetes-cli"
 brew "kubectx"
 brew "kustomize"

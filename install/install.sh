@@ -24,6 +24,8 @@ if [ -d "$HOME/goinfre" ]; then
   BREW_HOME="$HOME/goinfre/homebrew"
 fi
 
+ARCH=$(uname -p)
+
 # Detect OS and package manager
 case "$(uname -s)" in
   Darwin)
@@ -39,11 +41,11 @@ case "$(uname -s)" in
     elif [ -f /etc/debian_version ]; then
       DISTRO=$(awk -F= '/^NAME/ {gsub(/"/, "", $2); print $2}' /etc/os-release)
       INSTALL="apt install -y"
-      apt update -y && $INSTALL build-essential procps
+      apt update -y && $INSTALL build-essential procps || true
     elif [ -f /etc/redhat-release ]; then
       DISTRO=$(cat /etc/redhat-release)
       if command -v dnf >/dev/null 2>&1; then
-        dnf group install -y development-tools
+        dnf group install -y development-tools || true
         INSTALL="dnf install -y"
       else
         INSTALL="yum install -y"
@@ -51,7 +53,7 @@ case "$(uname -s)" in
     elif [ -f /etc/arch-release ]; then
       DISTRO="Arch"
       INSTALL="pacman -Sy --noconfirm"
-      $INSTALL base-devel
+      $INSTALL base-devel || true
     else
       DISTRO="Unknown Linux"
     fi
@@ -67,7 +69,7 @@ if [ $OS = "macos" ]; then
   xcode-select --install || true
 elif [ $OS = "linux" ]; then
   printf "${GREEN}Detected Linux: $DISTRO ${NC}\n"
-  ${INSTALL} git bash curl
+  ${INSTALL} git bash curl || true
 else
   printf "${RED}Unsupported OS: $OS ${NC}\n"
   exit 1
@@ -119,6 +121,14 @@ if [ -f "${DOTFILES_DIR}/os/common/Brewfile" ]; then
   printf "${GREEN}Common packages installed successfully from Brewfile.${NC}\n"
 else
   printf "${YELLOW}Common Brewfile not found, skipping common package installation.${NC}\n"
+fi
+
+# Install x86_64 packages from Brewfile
+if [ $ARCH = "x86_64" ] || [ $OS = "macos" ]; then
+  brew bundle --file=${DOTFILES_DIR}/os/common/Brewfile.x86_64 || true
+  printf "${GREEN}Packages installed successfully from Brewfile.x86_64.${NC}\n"
+else
+  printf "${YELLOW}Brewfile.x86_64 not found, skipping common package installation.${NC}\n"
 fi
 
 # Install MacOS packages from Brewfile
