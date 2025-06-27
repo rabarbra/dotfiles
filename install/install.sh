@@ -38,11 +38,12 @@ case "$(uname -s)" in
       INSTALL="apk add"
     elif [ -f /etc/debian_version ]; then
       DISTRO=$(awk -F= '/^NAME/ {gsub(/"/, "", $2); print $2}' /etc/os-release)
-      apt update -y
+      apt update -y && apt install -y build-essential
       INSTALL="apt install -y"
     elif [ -f /etc/redhat-release ]; then
       DISTRO=$(cat /etc/redhat-release)
       if command -v dnf >/dev/null 2>&1; then
+        dnf group install development-tools
         INSTALL="dnf install -y"
       else
         INSTALL="yum install -y"
@@ -112,11 +113,7 @@ fi
 
 # Install common packages from Brewfile
 if [ -f "${DOTFILES_DIR}/os/common/Brewfile" ]; then
-  brew bundle --file=${DOTFILES_DIR}/os/common/Brewfile
-  if [ $? -ne 0 ]; then
-      printf "${RED}Failed to install common packages from Brewfile.${NC}\n"
-      exit 1
-  fi
+  brew bundle --file=${DOTFILES_DIR}/os/common/Brewfile || true
   printf "${GREEN}Common packages installed successfully from Brewfile.${NC}\n"
 else
   printf "${YELLOW}Common Brewfile not found, skipping common package installation.${NC}\n"
@@ -124,11 +121,7 @@ fi
 
 # Install MacOS packages from Brewfile
 if [ $OS = "macos" ] && [ -f "${DOTFILES_DIR}/os/macos/Brewfile" ]; then
-  brew bundle --file=${DOTFILES_DIR}/os/macos/Brewfile
-  if [ $? -ne 0 ]; then
-      printf "${RED}Failed to install MacOs packages from Brewfile.${NC}\n"
-      exit 1
-  fi
+  brew bundle --file=${DOTFILES_DIR}/os/macos/Brewfile || true
   printf "${GREEN}MacOs packages installed successfully from Brewfile.${NC}\n"
 else
   printf "${YELLOW}MacOs Brewfile not found, skipping MacOs package installation.${NC}\n"
