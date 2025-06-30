@@ -140,7 +140,7 @@ else
   printf "${YELLOW}MacOs Brewfile not found, skipping MacOs package installation.${NC}\n"
 fi
 
-if command -v zsh >/dev/null 2>&1; then
+if command -v zsh; then
   echo "Switching to Zsh..."
   exec zsh -l
 else
