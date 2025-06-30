@@ -159,6 +159,17 @@ stow --no-folding --restow --verbose=1 zsh || true
 stow --no-folding --restow --verbose=1 git || true
 stow --no-folding --restow --verbose=1 bash || true
 
+# Install zsh plugins
+source $HOME/.zshrc || true
+if [ -d {ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]; then
+  printf "${YELLOW}zsh-syntax-highlighting plugin already exists.${NC}\n"
+else
+  printf "${GREEN}Installing zsh-syntax-highlighting plugin...${NC}\n"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+            ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
+source $HOME/.zshrc || true
+
 if [ $OS = "linux" ]; then
   printf "${BLUE}eval \"\$(${BREW_HOME}/bin/brew shellenv)\"${NC}\n"
 fi
