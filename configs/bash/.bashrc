@@ -11,7 +11,7 @@ parse_git_branch() {
   git branch 2>/dev/null | grep '\*' | sed 's/* / (/' | sed 's/$/)/'
 }
 
-PS1='\[\e[1;34m\]\w\[\e[33m\]$(parse_git_branch)\[\e[0m\] \> '
+PS1='\[\e[1;34m\]\w\[\e[33m\]$(parse_git_branch)\[\e[0m\] '
 
 ### Bash Completion ###
 if [ -f /etc/bash_completion ]; then
