@@ -85,7 +85,7 @@ if [ ! -d "$DOTFILES_DIR" ]; then
     printf "${GREEN}Dotfiles repository cloned successfully to ${DOTFILES_DIR}.${NC}\n"
 else
     printf "${YELLOW}Dotfiles repository already exists at ${DOTFILES_DIR}.${NC}\n"
-    cd $DOTFILES_REPO && git pull || true
+    cd $DOTFILES_DIR && git pull || true
 fi
 
 # Install homebrew if not installed
@@ -140,13 +140,6 @@ else
   printf "${YELLOW}MacOs Brewfile not found, skipping MacOs package installation.${NC}\n"
 fi
 
-if command -v zsh; then
-  echo "Switching to Zsh..."
-  exec zsh -l
-else
-  echo "Zsh not found, staying in sh."
-fi
-
 # Install Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -167,12 +160,12 @@ stow --no-folding --restow --verbose=1 git || true
 stow --no-folding --restow --verbose=1 bash || true
 
 # Install zsh plugins
-if [ -d {ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]; then
+if [ -d ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
   printf "${YELLOW}zsh-syntax-highlighting plugin already exists.${NC}\n"
 else
   printf "${GREEN}Installing zsh-syntax-highlighting plugin...${NC}\n"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-            ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+          ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 fi
 
 if [ $OS = "linux" ]; then
