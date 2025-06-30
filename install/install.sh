@@ -140,6 +140,13 @@ else
   printf "${YELLOW}MacOs Brewfile not found, skipping MacOs package installation.${NC}\n"
 fi
 
+if command -v zsh >/dev/null 2>&1; then
+  echo "Switching to Zsh..."
+  exec zsh -l
+else
+  echo "Zsh not found, staying in sh."
+fi
+
 # Install Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -160,7 +167,6 @@ stow --no-folding --restow --verbose=1 git || true
 stow --no-folding --restow --verbose=1 bash || true
 
 # Install zsh plugins
-source $HOME/.zshrc || true
 if [ -d {ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]; then
   printf "${YELLOW}zsh-syntax-highlighting plugin already exists.${NC}\n"
 else
@@ -168,7 +174,6 @@ else
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
             ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
-source $HOME/.zshrc || true
 
 if [ $OS = "linux" ]; then
   printf "${BLUE}eval \"\$(${BREW_HOME}/bin/brew shellenv)\"${NC}\n"
