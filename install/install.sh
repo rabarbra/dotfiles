@@ -155,9 +155,9 @@ fi
 # Symlink dotfiles
 printf "${GREEN}Symlinking dotfiles...${NC}\n"
 cd $DOTFILES_DIR/configs || exit 1
-stow --no-folding --restow --verbose=1 zsh || true
-stow --no-folding --restow --verbose=1 git || true
-stow --no-folding --restow --verbose=1 bash || true
+stow -t ${HOME} --no-folding --restow --verbose=1 zsh || true
+stow -t ${HOME} --no-folding --restow --verbose=1 git || true
+stow -t ${HOME} --no-folding --restow --verbose=1 bash || true
 
 # Install zsh plugins
 if [ -d ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
