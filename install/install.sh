@@ -159,6 +159,7 @@ stow -t ${HOME} --no-folding --restow --verbose=1 zsh || true
 stow -t ${HOME} --no-folding --restow --verbose=1 git || true
 stow -t ${HOME} --no-folding --restow --verbose=1 bash || true
 cd .config || exit 1
+mkdir -p ${HOME}/.config/mise
 stow -t ${HOME}/.config/mise --no-folding --restow --verbose=1 mise || true
 
 # Install zsh plugins
