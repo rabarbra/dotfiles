@@ -35,6 +35,7 @@ export EDITOR='vim'
 ### ALIASES ###
 alias oci_auth="oci session authenticate --profile-name DEFAULT --region eu-frankfurt-1 --tenancy-name simonenko --no-browser --auth security_token"
 alias ls="eza"
+alias vpn='sudo openfortivpn -c ~/.config/openfortivpn/cnf -p $(bw get password Service.wobcom.de)'
 
 ### History ###
 HISTFILE=~/.zsh_history
