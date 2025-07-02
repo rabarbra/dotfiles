@@ -11,7 +11,7 @@ plugin_autoupdate_last_check_duration = '1 week' # set to 0 to disable updates
 trusted_config_paths = [
     '~/prog/',
 ]
-verbose = true
+verbose = false
 http_timeout = "30s"
 jobs = 4
 raw = false
