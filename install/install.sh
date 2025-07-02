@@ -159,7 +159,7 @@ stow -t ${HOME} --no-folding --restow --verbose=1 zsh || true
 stow -t ${HOME} --no-folding --restow --verbose=1 git || true
 stow -t ${HOME} --no-folding --restow --verbose=1 bash || true
 cd .config || exit 1
-stow -t ${HOME}/.config --no-folding --restow --verbose=1 mise || true
+stow -t ${HOME}/.config/mise --no-folding --restow --verbose=1 mise || true
 
 # Install zsh plugins
 if [ -d ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
