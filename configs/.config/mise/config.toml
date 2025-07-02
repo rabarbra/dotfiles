@@ -1,0 +1,26 @@
+[tools]
+node = '24.3.0'
+python = '3.13.5'
+go = '1.24.4'
+zig = '0.14.1'
+
+[settings]
+always_keep_download = false        # deleted after install by default
+always_keep_install = false
+plugin_autoupdate_last_check_duration = '1 week' # set to 0 to disable updates
+trusted_config_paths = [
+    '~/prog/',
+]
+verbose = true
+http_timeout = "30s"
+jobs = 4
+raw = false
+yes = false
+
+not_found_auto_install = true
+task_output = "prefix"
+paranoid = false
+disable_default_shorthands = false # disable the default shorthands, see `MISE_DISABLE_DEFAULT_SHORTHANDS`
+env_file = '.env'
+experimental = true
+status = { missing_tools = "if_other_versions_installed", show_env = false, show_tools = false }

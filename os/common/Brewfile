@@ -36,7 +36,7 @@ brew "hexyl"
 brew "tinted-theming/tinted/tinty"
 brew "stow"
 
-brew "asdf"
+brew "mise"
 
 
 # Git tools
